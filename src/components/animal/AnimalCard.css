@@ -1,0 +1,20 @@
+img {
+  display: block;
+  border: 0;
+  padding-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+}
+
+.card-content {
+  flex-basis: 30%;
+}
+
+h3, p {
+  text-align: center;
+}
