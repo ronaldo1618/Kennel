@@ -2,8 +2,8 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle"
+      "name": "Esme",
+      "breed": "Pitbull"
     },
     {
       "id": 2,
@@ -12,8 +12,8 @@
     },
     {
       "id": 3,
-      "name": "LuLu",
-      "breed": "Pitbull"
+      "name": "Doodles",
+      "breed": "Poodle"
     }
   ],
   "employees": [
@@ -40,7 +40,7 @@
     },
     {
       "id": 2,
-      "address": "Nasvhille South"
+      "address": "Nashville South"
     }
   ],
   "owners": [
