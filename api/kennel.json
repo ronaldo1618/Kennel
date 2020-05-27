@@ -1,0 +1,20 @@
+{
+  "animals": [
+    { "id": 1, "name": "Doodles", "breed": "Poodle"},
+    { "id": 2, "name": "Decker", "breed": "German Shepherd" },
+    { "id": 3, "name": "Esme", "breed": "Pitbull" }
+  ],
+  "employees": [
+    { "id": 1, "name": "Jeff", "job": "Groomer"},
+    { "id": 2, "name": "Yara", "job": "Taking care of your lovely pets!"},
+    { "id": 3, "name": "Mike", "job": "Customer Service Representative"}
+  ],
+  "locations": [
+    { "id": 1, "address": "Nashville North"},
+    { "id": 2, "address": "Nasvhille South"}
+  ],
+  "owners": [
+    { "id": 1, "name": "J-Dawg", "phoneNumber": "111-111-1111"},
+    { "id": 2, "name": "BirdDog", "phoneNumber": "222-222-2222"}
+  ]
+}
