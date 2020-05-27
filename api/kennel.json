@@ -2,34 +2,34 @@
   "animals": [
     {
       "id": 1,
-      "name": "Esme",
+      "name": "esme",
       "breed": "Pitbull"
     },
     {
       "id": 2,
-      "name": "Decker",
+      "name": "decker",
       "breed": "German Shepherd"
     },
     {
       "id": 3,
-      "name": "Doodles",
+      "name": "doodles",
       "breed": "Poodle"
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "Jeff",
+      "name": "jeff",
       "job": "Groomer"
     },
     {
       "id": 2,
-      "name": "Yara",
+      "name": "yara",
       "job": "Taking care of your lovely pets!"
     },
     {
       "id": 3,
-      "name": "Mike",
+      "name": "mike",
       "job": "Customer Service Representative"
     }
   ],
@@ -46,12 +46,12 @@
   "owners": [
     {
       "id": 1,
-      "name": "J-Dawg",
+      "name": "j-Dawg",
       "phoneNumber": "111-111-1111"
     },
     {
       "id": 2,
-      "name": "BirdDog",
+      "name": "birdDog",
       "phoneNumber": "222-222-2222"
     }
   ]
