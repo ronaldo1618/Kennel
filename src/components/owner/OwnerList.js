@@ -14,9 +14,14 @@ const OwnerList = () => {
     getOwners()
   }, []);
 
+  const deleteOwner = id => {
+    OwnerManager.delete(id)
+    .then(() => OwnerManager.getAll().then(setOwners))
+  }
+
   return (
     <div>
-      {owners.map(owner => <OwnerCard key={owner.id} owner={owner} />)}
+      {owners.map(owner => <OwnerCard key={owner.id} owner={owner} deleteOwner={deleteOwner} />)}
     </div>
   )
 }

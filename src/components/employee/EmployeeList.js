@@ -14,9 +14,14 @@ const EmployeeList = () => {
     getEmployees()
   }, []);
 
+  const deleteEmployee = id => {
+    EmployeeManager.delete(id)
+    .then(() => EmployeeManager.getAll().then(setEmployees));
+  };
+
   return (
     <div>
-      {employees.map(employee => <EmpolyeeCard key={employee.id} employee={employee} />)}
+      {employees.map(employee => <EmpolyeeCard key={employee.id} employee={employee} deleteEmployee={deleteEmployee} />)}
     </div>
   )
 }

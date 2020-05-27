@@ -7,6 +7,7 @@ const EmployeeCard = (props) => {
         Employee Name: {props.employee.name}
         <p>Job: {props.employee.job}</p>
       </h3>
+      <button type="submit" onClick={() => props.deleteEmployee(props.employee.id)}>Fired!</button>
     </div>
   );
 };
