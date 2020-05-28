@@ -8,5 +8,10 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/employees`)
     .then(data => data.json())
+  },
+  delete(id) {
+    return fetch(`${remoteURL}/employees/${id}`, {
+      method: "DELETE"
+    }).then(data => data.json())
   }
 }
