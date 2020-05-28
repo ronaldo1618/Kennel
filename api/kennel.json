@@ -1,11 +1,6 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "esme",
-      "breed": "Pitbull"
-    },
-    {
       "id": 2,
       "name": "decker",
       "breed": "German Shepherd"
@@ -14,6 +9,16 @@
       "id": 3,
       "name": "doodles",
       "breed": "Poodle"
+    },
+    {
+      "name": "Yara",
+      "breed": "Golden Retriever",
+      "id": 4
+    },
+    {
+      "name": "Dixie",
+      "breed": "Border Collie",
+      "id": 5
     }
   ],
   "employees": [

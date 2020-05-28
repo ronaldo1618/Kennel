@@ -13,5 +13,14 @@ export default {
     return fetch(`${remoteURL}/employees/${id}`, {
       method: "DELETE"
     }).then(data => data.json())
+  },
+  post(employeeObj) {
+    return fetch(`${remoteURL}/employees`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(employeeObj)
+    }).then(data => data.json())
   }
 }
