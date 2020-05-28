@@ -1,12 +1,12 @@
 import React from 'react';
 
-const OwnerCard = () => {
+const OwnerCard = props => {
   return  (
-    <div className="card">
-      <div className="card-content">
+    <div>
+      <div>
         <h3>
-          Owner: <span className="card-owner">Jeff</span>
-          <p>Founder of Student Kennels</p>
+          Owner: {props.owner.name}
+          <p>Phone number: {props.owner.phoneNumber}</p>
         </h3>
       </div>
     </div>
