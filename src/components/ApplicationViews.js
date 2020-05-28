@@ -19,12 +19,14 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+      exact
         path="/animals"
         render={props => {
           return <AnimalList />;
         }}
       />
       <Route
+        exact
         path="/locations"
         render={props => {
           return <LocationList />;
@@ -43,14 +45,19 @@ const ApplicationViews = () => {
         }}
       />
       <Route
-        path="/animals/:animalId(\d+)" render={(props) => {
-          return <AnimalDetail animalId={parseInt(props.match.params.animalId)}/>;
+        path="/animals/:animalId(\d+)"
+        render={props => {
+          return (
+            <AnimalDetail
+              animalId={parseInt(props.match.params.animalId)} {...props} />
+          );
         }}
       />
       <Route 
         path="/locations/:locationId(\d+)" render={
         (props) => {
-          return <LocationDetail locationId={parseInt(props.match.params.locationId)}/>;
+          return <LocationDetail 
+            locationId={parseInt(props.match.params.locationId)} {...props}/>;
         }}
       />
     </>
