@@ -8,9 +8,9 @@ const LocationDetail = props => {
 
   useEffect(() => {
     LocationManager.get(props.locationId)
-      .then(location => {
+      .then(locationObj => {
         setLocation({
-          address: location.address
+          address: locationObj.address
         });
         setIsLoading(false)
       });
