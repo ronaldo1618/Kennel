@@ -3,22 +3,26 @@
     {
       "id": 2,
       "name": "thor",
-      "breed": "German Shepherd"
+      "breed": "German Shepherd",
+      "employeeId": 3
     },
     {
       "id": 4,
       "name": "Yara",
-      "breed": "Golden Retriever"
+      "breed": "Golden Retriever",
+      "employeeId": 3
     },
     {
       "id": 5,
       "name": "Dixie",
-      "breed": "Border Collie"
+      "breed": "Border Collie",
+      "employeeId": 2
     },
     {
       "id": 6,
       "name": "Bert",
-      "breed": "Lab pupper"
+      "breed": "Lab pupper",
+      "employeeId": 1
     }
   ],
   "employees": [

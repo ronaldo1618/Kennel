@@ -17,6 +17,7 @@ import AnimalEditForm from "./animal/AnimalEditForm";
 import EmployeeEditForm from './employee/EmployeeEditForm';
 import LocationEditForm from './location/LocationEditForm';
 import OwnerEditForm from "./owner/OwnerEditForm";
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals';
 
 
 const ApplicationViews = () => {
@@ -176,6 +177,10 @@ const ApplicationViews = () => {
             return <Redirect to="/Login"/>;
           }
         }}
+      />
+      <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+        return <EmployeeWithAnimals {...props} />
+      }}
       />
       {/* <Route component={NotFound}/>
       </Switch> */}
