@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AnimalSpotlight from '../animal/AnimalSpotlight';
 import AnimalManager from '../../modules/AnimalManager';
 import './Home.css';
-import AnimalCard from "../animal/AnimalCard";
 
 const Home = () => {
   const [spotlightId, setSpotlightId] = useState(0);

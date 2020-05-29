@@ -10,7 +10,8 @@ const AnimalDetail = (props) => {
     AnimalManager.get(props.animalId).then(animal => {
       setAnimal({
         name: animal.name,
-        breed: animal.breed
+        breed: animal.breed,
+        employeeId: animal.employeeId
       });
       setIsLoading(false);
     });

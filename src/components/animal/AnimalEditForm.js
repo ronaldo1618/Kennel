@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 import AnimalManager from "../../modules/AnimalManager"
-// import EmployeeList from '../employee/EmployeeList';
 import EmployeeManager from '../../modules/EmployeeManager'
-import EmployeeCard from '../employee/EmployeeCard';
 import "./AnimalForm.css"
 
 const AnimalEditForm = props => {
@@ -20,17 +18,16 @@ const AnimalEditForm = props => {
   }, []);
 
 
-  const handleFieldChange = evt => {
+  const handleFieldChange = e => {
     const stateToChange = { ...animal };
-    stateToChange[evt.target.id] = evt.target.value;
+    stateToChange[e.target.id] = e.target.value;
     setAnimal(stateToChange);
   };
 
-  const updateExistingAnimal = evt => {
-    evt.preventDefault()
+  const updateExistingAnimal = e => {
+    e.preventDefault()
     setIsLoading(true);
 
-    // This is an edit, so we need the id
     const editedAnimal = {
       id: props.match.params.animalId,
       name: animal.name,
@@ -49,7 +46,7 @@ const AnimalEditForm = props => {
         setAnimal(animal);
         setIsLoading(false);
       });
-  }, []);
+  }, [props.match.params.animalId]);
 
   return (
     <>

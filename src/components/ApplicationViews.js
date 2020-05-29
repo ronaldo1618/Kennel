@@ -24,7 +24,7 @@ const ApplicationViews = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
   return (
     <>
-    {/* <Switch> */}
+    <Switch>
       <Route
         path="/login"
         component={Login} 
@@ -182,8 +182,8 @@ const ApplicationViews = () => {
         return <EmployeeWithAnimals {...props} />
       }}
       />
-      {/* <Route component={NotFound}/>
-      </Switch> */}
+      <Route component={NotFound}/>
+      </Switch>
     </>
   );
 };
