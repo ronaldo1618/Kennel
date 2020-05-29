@@ -18,7 +18,7 @@ const LocationList = (props) => {
 
   const deleteLocation = id => {
     LocationManager.delete(id)
-    .then(() => LocationManager.getAll().then(setLocations))
+    .then(() => LocationManager.getWithEmployees().then(setLocations))
   }
 
   return (

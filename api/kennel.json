@@ -5,38 +5,32 @@
       "name": "Yara",
       "breed": "Golden Retriever",
       "employeeId": 1
-    },
-    {
-      "id": 5,
-      "name": "Dixie",
-      "breed": "Blue Heeler",
-      "employeeId": 3
-    },
-    {
-      "id": 6,
-      "name": "Thor",
-      "breed": "German Shepherd",
-      "employeeId": 2
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "jeff",
+      "name": "Jeff",
       "job": "Groomer",
       "locationId": 1
     },
     {
       "id": 2,
-      "name": "yara",
-      "job": "Taking care of your lovely pets!",
+      "name": "Jen",
+      "job": "Groomer",
       "locationId": 2
     },
     {
       "id": 3,
-      "name": "mike",
-      "job": "Customer Service Representative",
+      "name": "Tasha",
+      "job": "Groomer",
       "locationId": 1
+    },
+    {
+      "id": 4,
+      "name": "Tim",
+      "job": "Customer Service Representative",
+      "locationId": 2
     }
   ],
   "locations": [
