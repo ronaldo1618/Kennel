@@ -23,17 +23,20 @@
     {
       "id": 1,
       "name": "jeff",
-      "job": "Groomer"
+      "job": "Groomer",
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "yara",
-      "job": "Taking care of your lovely pets!"
+      "job": "Taking care of your lovely pets!",
+      "locationId": 2
     },
     {
       "id": 3,
       "name": "mike",
-      "job": "Customer Service Representative"
+      "job": "Customer Service Representative",
+      "locationId": 1
     }
   ],
   "locations": [
