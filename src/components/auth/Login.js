@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const Login = props => {
-  const setUser = props.setUser;
   const [credentials, setCredentials] = useState({email: "", password: ""});
 
   const handleFieldChange = e => {
@@ -13,7 +12,6 @@ const Login = props => {
   const handleLogin = e => {
     e.preventDefault();
     props.setUser(credentials)
-    // sessionStorage.setItem("credentials", JSON.stringify(credentials));
     props.history.push("/");
   }
 
