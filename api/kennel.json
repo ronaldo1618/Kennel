@@ -1,24 +1,16 @@
 {
   "animals": [
     {
-      "id": 2,
-      "name": "thor",
-      "breed": "German Shepherd"
-    },
-    {
-      "id": 4,
       "name": "Yara",
-      "breed": "Golden Retriever"
+      "breed": "Golden Retriever",
+      "employeeId": 1,
+      "id": 1
     },
     {
-      "id": 5,
-      "name": "Dixie",
-      "breed": "Border Collie"
-    },
-    {
-      "id": 6,
-      "name": "Bert",
-      "breed": "Lab pupper"
+      "name": "Plugger",
+      "breed": "Border Collie",
+      "employeeId": 3,
+      "id": 2
     }
   ],
   "employees": [
