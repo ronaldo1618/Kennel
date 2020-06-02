@@ -11,5 +11,14 @@ export default {
     return fetch(`${remoteURL}/animals/${id}`, {
       method: "DELETE"
     }).then(data => data.json())
+  },
+  post(animalObj) {
+    return fetch(`${remoteURL}/animals`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(animalObj)
+    }).then(data => data.json())
   }
 }
