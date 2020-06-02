@@ -5,6 +5,18 @@
       "name": "Yara",
       "breed": "Golden Retriever",
       "employeeId": 1
+    },
+    {
+      "name": "Plugger",
+      "breed": "Border Collie",
+      "employeeId": 2,
+      "id": 5
+    },
+    {
+      "name": "odl",
+      "breed": "idk",
+      "employeeId": 1,
+      "id": 6
     }
   ],
   "employees": [
