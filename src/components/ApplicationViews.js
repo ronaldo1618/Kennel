@@ -1,6 +1,7 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+import NotFound from './notFound/NotFound';
 import AnimalList from "./animal/AnimalList";
 import LocationList from "./location/LocationList";
 import EmployeeList from "./employee/EmployeeList";
@@ -12,12 +13,17 @@ import LocationForm from './location/LocationForm'
 import EmployeeForm from './employee/EmployeeForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login';
+import AnimalEditForm from "./animal/AnimalEditForm";
+import EmployeeEditForm from './employee/EmployeeEditForm';
+import LocationEditForm from './location/LocationEditForm';
+import OwnerEditForm from "./owner/OwnerEditForm";
 
 
 const ApplicationViews = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
   return (
     <>
+    {/* <Switch> */}
       <Route
         path="/login"
         component={Login} 
@@ -74,6 +80,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/animals/:animalId(\d+)"
         render={props => {
           if(isAuthenticated()){
@@ -85,7 +92,8 @@ const ApplicationViews = () => {
           }
         }}
       />
-      <Route 
+      <Route
+        exact
         path="/locations/:locationId(\d+)" render={
         (props) => {
           if(isAuthenticated()){
@@ -134,6 +142,43 @@ const ApplicationViews = () => {
           }
         }}
       />
+      <Route path="/animals/:animalId(\d+)/edit" render={props => {
+        if(isAuthenticated()) {
+          return <AnimalEditForm {...props}/>;
+        } else {
+          return <Redirect to="/Login"/>;
+        }
+      }}
+      />
+      <Route path="/employees/:employeeId(\d+)/edit" render={
+        props => {
+          if(isAuthenticated()) {
+            return <EmployeeEditForm {...props}/>;
+          } else {
+            return <Redirect to="/Login"/>;
+          }
+        }}
+      />
+      <Route path="/locations/:locationId(\d+)/edit" render={
+        props => {
+          if(isAuthenticated()) {
+            return <LocationEditForm {...props}/>;
+          } else {
+            return <Redirect to="/Login"/>;
+          }
+        }}
+      />
+      <Route path="/owners/:ownerId(\d+)/edit" render={
+        props => {
+          if(isAuthenticated()) {
+            return <OwnerEditForm {...props}/>;
+          } else {
+            return <Redirect to="/Login"/>;
+          }
+        }}
+      />
+      {/* <Route component={NotFound}/>
+      </Switch> */}
     </>
   );
 };

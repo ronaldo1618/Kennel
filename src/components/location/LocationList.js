@@ -7,7 +7,9 @@ const LocationList = (props) => {
 
   const getLocations = () => {
     LocationManager.getAll()
-    .then(locations => setLocations(locations))
+    .then(locations => {
+      setLocations(locations)
+    })
   };
 
   useEffect(() => {
@@ -22,10 +24,10 @@ const LocationList = (props) => {
   return (
     <>
       <section className="section-content">
-          <button type="button" className="btn" onClick={() => {props.history.push("/locations/new")}}>New Location</button>
-        </section>
+          <button type="button" className="btn" onClick={() => {props.history.push("./locations/new")}}>New Location</button>
+      </section>
       <div>
-        {locations.map(location => <LocationCard key={location.id} location={location} deleteLocation={deleteLocation} />)}
+        {locations.map(locationObj => <LocationCard key={locationObj.id} locationObj={locationObj} deleteLocation={deleteLocation} {...props}/>)}
       </div>
     </>
   )

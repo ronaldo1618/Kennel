@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import EmpolyeeCard from './EmployeeCard';
+import EmployeeCard from './EmployeeCard';
 import EmployeeManager from '../../modules/EmployeeManager';
 
 const EmployeeList = (props) => {
@@ -25,7 +25,7 @@ const EmployeeList = (props) => {
         <button type="button" className="btn" onClick={() => {props.history.push("/employees/new")}}>New Employee</button>
       </section>
       <div>
-        {employees.map(employee => <EmpolyeeCard key={employee.id} employee={employee} deleteEmployee={deleteEmployee} />)}
+        {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} deleteEmployee={deleteEmployee} {...props}/>)}
       </div>
     </>
   )

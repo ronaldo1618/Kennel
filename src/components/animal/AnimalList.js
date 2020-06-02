@@ -26,7 +26,7 @@ const AnimalList = (props) => {
         <button type="button" className="btn" onClick={() => {props.history.push("./animals/new")}}>Admit Animal</button>
       </section>
       <div className="container-cards">
-        {animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal} />)}
+        {animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal} {...props}/>)}
       </div>
     </>
   );
