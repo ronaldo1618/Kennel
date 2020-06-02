@@ -16,7 +16,6 @@ const AnimalForm = props => {
   }, []);
   const handleFieldChange = e => {
     const stateToChange = { ...animal };
-    console.log("id", e.target.id, "value", e.target.value)
     stateToChange[e.target.id] = e.target.value;
     setAnimal(stateToChange);
   }
@@ -36,17 +35,11 @@ const AnimalForm = props => {
       <form>
         <fieldset>
           <div className="formgrid">
-            <input type="text" 
-            required onChange={handleFieldChange} 
-            id="name" 
-            placeholder="Animal name"/>
-            <label htmlFor="name">Name</label>
-            <input type="text" 
-            required onChange={handleFieldChange} 
-            id="breed" 
-            placeholder="Breed name"/>
-            <label htmlFor="breed">Breed</label>
-            <select className="form-control" 
+            <input type="text" required onChange={handleFieldChange} id="name" placeholder="Animal Name"/>
+            <label htmlFor="name">Name</label>
+            <input type="text" required onChange={handleFieldChange} id="breed" placeholder="Breed Name"/>
+            <label htmlFor="breed">Breed</label>
+            <select className="form-control" 
               id="employeeId" 
               value={animal.employeeId} 
               onChange={handleFieldChange}>
@@ -55,7 +48,7 @@ const AnimalForm = props => {
               <option key={employee.id} value={employee.id}>{employee.name}</option>
               )}
             </select>
-            <label htmlFor="employeeId">Employee</label>
+            <label htmlFor="employeeId">Employee</label>
           </div>
           <div className="alignRight">
             <button type="button" disabled={isLoading} onClick={constructNewAnimal}>Submit</button>
