@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
+import EmployeeManager from '../../modules/EmployeeManager';
 import "./AnimalDetail.css";
 
 const AnimalDetail = (props) => {
@@ -33,6 +34,7 @@ const AnimalDetail = (props) => {
           Name: <span style={{ color: "darkslategrey" }}>{animal.name}</span>
         </h3>
         <p>Breed: {animal.breed}</p>
+        <p></p>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Discharge
         </button>
