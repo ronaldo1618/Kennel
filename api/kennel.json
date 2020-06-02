@@ -1,11 +1,6 @@
 {
   "animals": [
     {
-      "id": 2,
-      "name": "thor",
-      "breed": "German Shepherd"
-    },
-    {
       "id": 4,
       "name": "Yara",
       "breed": "Golden Retriever"
