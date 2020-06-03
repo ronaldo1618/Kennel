@@ -27,15 +27,12 @@ const AnimalEditForm = props => {
   const updateExistingAnimal = e => {
     e.preventDefault()
     setIsLoading(true);
-
     const editedAnimal = {
       id: props.match.params.animalId,
       name: animal.name,
       breed: animal.breed,
       employeeId: parseInt(animal.employeeId)
     };
-
-
     AnimalManager.update(editedAnimal)
       .then(() => props.history.push("/animals"))
   }

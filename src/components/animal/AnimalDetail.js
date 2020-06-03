@@ -48,5 +48,4 @@ const AnimalDetail = (props) => {
     </div>
   );
 };
-
-export default AnimalDetail;
+export default AnimalDetail;

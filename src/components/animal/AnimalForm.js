@@ -42,7 +42,7 @@ const AnimalForm = props => {
           <div className="formgrid">
             <input type="text" required onChange={handleFieldChange} id="name" placeholder="Animal name"/>
             <label htmlFor="name">Name</label>
-            <input type="text" required onChange={handleFieldChange} id="breed" placeholder="Breed name"/>
+            <input type="text" required onChange={handleFieldChange} id="breed" placeholder="Breed Name"/>
             <label htmlFor="breed">Breed</label>
             <select className="form-control" id="employeeId" value={animal.employeeId} onChange={handleFieldChange}>
               <option className="hide-option" value=''></option>
@@ -60,5 +60,4 @@ const AnimalForm = props => {
     </>
   )
 }
-
-export default AnimalForm;
+export default AnimalForm;
