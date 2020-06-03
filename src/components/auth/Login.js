@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Login = props => {
   const [credentials, setCredentials] = useState({email: "", password: ""});
 
+  // Look into this more and find other ways of user authentication
   const handleFieldChange = e => {
     const stateToChange = { ...credentials };
     stateToChange[e.target.id] = e.target.value;
