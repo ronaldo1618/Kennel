@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import EmployeeCard from './EmployeeCard';
 import apiManager from '../../modules/apiManager';
+import ObjCard from '../detailCard/ObjCard';
 
 const EmployeeList = (props) => {
   const [employees, setEmployees] = useState([]);
@@ -24,8 +24,8 @@ const EmployeeList = (props) => {
       <section className="section-content">
         <button type="button" className="btn" onClick={() => {props.history.push("/employees/new")}}>New Employee</button>
       </section>
-      <div>
-        {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} deleteEmployee={deleteEmployee} {...props}/>)}
+      <div className="container-cards">
+        {employees.map(employee => <ObjCard key={employee.id} obj={employee} objURL={"employees"} attribute={employee.job} title={"Job"} deleteObj={deleteEmployee} {...props}/>)}
       </div>
     </>
   )

@@ -3,7 +3,7 @@ import apiManager from '../../modules/apiManager';
 import './LocationForm.css';
 
 const LocationForm = props => {
-  const [location, setLocation] = useState({address: ""});
+  const [location, setLocation] = useState({address: "",name: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = e => {
@@ -14,7 +14,7 @@ const LocationForm = props => {
 
   const constructNewLocation = e => {
     e.preventDefault();
-    if (location.address === "") {
+    if (location.address === "" || location.name === "") {
       window.alert("Please make sure all fields are filled out")
     } else {
       setIsLoading(true);
@@ -28,6 +28,8 @@ const LocationForm = props => {
       <form>
         <fieldset>
           <div className="formgrid">
+            <input type="text" required onChange={handleFieldChange} id="name" placeholder="Location Name"/>
+            <label htmlFor="name">Name</label>
             <input type="text" required onChange={handleFieldChange} id="address" placeholder="Location address"/>
             <label htmlFor="address">Address</label>
             <div className="alignRight">

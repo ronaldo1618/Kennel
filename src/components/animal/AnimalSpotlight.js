@@ -14,11 +14,13 @@ const AnimalSpotlight = props => {
   }, [props.animalId]);
 
   return (
-    <div className="animal-spotlight">
-      <img src={require('./dog.svg')} alt="My Dog" />
-      <div>
-        <h3>{animal.name}</h3>
-        <p>{animal.breed}</p>
+    <div className="container-spotlight">
+      <div className="animal-spotlight">
+        <img src={require('./dog.svg')} alt="My Dog" />
+        <div>
+          <h3>{animal.name}</h3>
+          <p>{animal.breed}</p>
+        </div>
       </div>
     </div>
   );

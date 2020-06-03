@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import OwnerCard from './OwnerCard';
 import apiManager from '../../modules/apiManager';
+import ObjCard from '../detailCard/ObjCard';
 
 const OwnerList = (props) => {
   const [owners, setOwners] = useState([]);
@@ -24,8 +24,8 @@ const OwnerList = (props) => {
       <section className="section-content">
           <button type="button" className="btn" onClick={() => {props.history.push("./owners/new")}}>New Owner</button>
       </section>
-      <div>
-        {owners.map(owner => <OwnerCard key={owner.id} owner={owner} deleteOwner={deleteOwner} {...props}/>)}
+      <div className="container-cards">
+        {owners.map(owner => <ObjCard key={owner.id} obj={owner} title={"Phone-number"} attribute={owner.phoneNumber} objURL={"owners"} deleteObj={deleteOwner} {...props}/>)}
       </div>
     </>
   )

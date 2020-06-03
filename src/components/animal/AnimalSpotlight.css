@@ -1,8 +1,14 @@
 .animal-spotlight {
   max-width: 400px;
   display: flex;
+  justify-content: center;
   border: 1px dashed gray;
   padding: 10px;
+}
+
+.container-spotlight {
+  display: flex;
+  justify-content: center;
 }
 
 .animal-spotlight img {

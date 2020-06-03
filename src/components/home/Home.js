@@ -15,19 +15,19 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-    <address>
-      <h3>
-        Visit Us at the Nashville North Location
-        <p>500 Puppy Way</p>
-      </h3>
-    </address>
-    <h1>Animal Spotlight</h1>
-    <button onClick={refreshSpotlightAnimal}>Reload &#x27f3;</button>
-    {
-      spotlightId && <AnimalSpotlight animalId={spotlightId} />
-    }
-    </>
+    <div>
+      <address>
+        <h3>
+          Visit Us at the Nashville North Location
+          <p>500 Puppy Way</p>
+        </h3>
+      </address>
+      <h1>Animal Spotlight</h1>
+      <button onClick={refreshSpotlightAnimal}>Reload &#x27f3;</button>
+      {
+        spotlightId && <AnimalSpotlight animalId={spotlightId} />
+      }
+    </div>
   );
 };
 
