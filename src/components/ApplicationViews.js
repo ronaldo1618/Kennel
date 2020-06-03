@@ -23,7 +23,6 @@ import EmployeeWithAnimals from './employee/EmployeeWithAnimals';
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
-  // const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
   return (
     <>
     <Switch>

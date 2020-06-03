@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import apiManager from '../../modules/apiManager';
-import "./OwnerForm.css"
 
 const OwnerEditForm = (props) => {
   const [owner, setOwner] = useState({ name: "", phoneNumber: "" });

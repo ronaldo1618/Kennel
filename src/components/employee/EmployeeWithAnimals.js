@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import apiManager from '../../modules/apiManager';
-import AnimalCard from '../animal/AnimalCard'
+import ObjCard from '../detailCard/ObjCard';
 
 const EmployeeWithAnimals = props => {
   const [employee, setEmployee] = useState({});
@@ -27,11 +27,14 @@ const EmployeeWithAnimals = props => {
     <div className="card">
       <p>Employee: {employee.name}</p>
       {animals.map(animal =>
-        <AnimalCard
+        <ObjCard
           key={animal.id}
-          animal={animal}
+          obj={animal}
           isLoading={isLoading}
           handleDelete={() => handleDelete(animal.id)}
+          objURL="animals"
+          title={"Breed"}
+          attribute={animal.breed}
           {...props}
         />
       )}

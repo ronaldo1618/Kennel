@@ -3,7 +3,7 @@ import apiManager from '../../modules/apiManager';
 import './LocationForm.css';
 
 const LocationEditForm = props => {
-  const [locationObj, setLocation] = useState({address: ""});
+  const [locationObj, setLocation] = useState({address: "", name: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = e => {
@@ -18,7 +18,8 @@ const LocationEditForm = props => {
 
     const editedLocation = {
       id: props.match.params.locationId,
-      address: locationObj.address
+      address: locationObj.address,
+      name: locationObj.name
     }
 
     apiManager.update("locations", editedLocation)
@@ -38,6 +39,8 @@ const LocationEditForm = props => {
       <form>
         <fieldset>
           <div className="formgrid">
+            <input type="text" required className="form-control" onChange={handleFieldChange} id="name" value={locationObj.name}/>
+            <label htmlFor="name">Name</label>
             <input type="text" required className="form-control" onChange={handleFieldChange} id="address" value={locationObj.address}/>
             <label htmlFor="address">Address</label>
           </div>

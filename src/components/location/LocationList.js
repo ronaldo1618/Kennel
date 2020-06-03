@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LocationCard from './LocationCard';
+import ObjCard from '../detailCard/ObjCard';
 import apiManager from '../../modules/apiManager';
 
 const LocationList = (props) => {
@@ -26,8 +26,8 @@ const LocationList = (props) => {
       <section className="section-content">
           <button type="button" className="btn" onClick={() => {props.history.push("./locations/new")}}>New Location</button>
       </section>
-      <div>
-        {locations.map(locationObj => <LocationCard key={locationObj.id} locationObj={locationObj} deleteLocation={deleteLocation} {...props}/>)}
+      <div className="container-cards">
+        {locations.map(locationObj => <ObjCard key={locationObj.id} obj={locationObj} deleteObj={deleteLocation} objURL={"locations"} attribute={locationObj.address} title={"Address"} {...props}/>)}
       </div>
     </>
   )

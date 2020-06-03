@@ -47,10 +47,12 @@
   "locations": [
     {
       "id": 1,
-      "address": "Nashville North"
+      "address": "Nashville North idk",
+      "name": "Nashville"
     },
     {
       "id": 2,
+      "name": "Nashville",
       "address": "Nashville South"
     }
   ],
@@ -58,7 +60,7 @@
     {
       "id": 1,
       "name": "Jay-Dawg",
-      "phoneNumber": "222-222-3334"
+      "phoneNumber": "222-222-3333"
     },
     {
       "id": 2,
