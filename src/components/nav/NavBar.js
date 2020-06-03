@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-
+// Look into withRouter more
 const NavBar = props => {
   const handleLogout = () => {
     props.clearUser();
