@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import "./Kennel.css";
-
+// User Authentication! Look for various ways of doing this
 const Kennel = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
