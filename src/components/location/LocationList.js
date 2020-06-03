@@ -6,7 +6,7 @@ const LocationList = (props) => {
   const [locations, setLocations] = useState([]);
 
   const getLocations = () => {
-    LocationManager.getAll()
+    LocationManager.getWithEmployees()
     .then(locations => {
       setLocations(locations)
     })
@@ -18,7 +18,7 @@ const LocationList = (props) => {
 
   const deleteLocation = id => {
     LocationManager.delete(id)
-    .then(() => LocationManager.getAll().then(setLocations))
+    .then(() => LocationManager.getWithEmployees().then(setLocations))
   }
 
   return (

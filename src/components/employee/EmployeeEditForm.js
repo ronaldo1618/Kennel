@@ -32,7 +32,7 @@ const EmployeeEditForm = props => {
         setEmployee(employee);
         setIsLoading(false);
       });
-  }, []);
+  }, [props.match.params.employeeId]);
 
   return (
     <>

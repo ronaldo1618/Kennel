@@ -59,3 +59,7 @@ fieldset input, fieldset button, fieldset select {
 fieldset .alignRight {
   text-align: right;
 }
+
+.hide-option {
+  display: none;
+}

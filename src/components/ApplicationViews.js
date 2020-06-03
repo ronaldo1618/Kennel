@@ -17,16 +17,20 @@ import AnimalEditForm from "./animal/AnimalEditForm";
 import EmployeeEditForm from './employee/EmployeeEditForm';
 import LocationEditForm from './location/LocationEditForm';
 import OwnerEditForm from "./owner/OwnerEditForm";
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals';
 
 
-const ApplicationViews = () => {
-  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+const ApplicationViews = (props) => {
+  const hasUser = props.hasUser;
+  const setUser = props.setUser;
+  // const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
   return (
     <>
-    {/* <Switch> */}
+    <Switch>
       <Route
-        path="/login"
-        component={Login} 
+        path="/login" render={props => {
+          return <Login setUser={setUser} {...props}/>
+        }}
       />
       <Route
         exact
@@ -39,7 +43,7 @@ const ApplicationViews = () => {
         exact
         path="/animals"
         render={props => {
-          if(isAuthenticated()) {
+          if(hasUser) {
             return <AnimalList {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -50,18 +54,14 @@ const ApplicationViews = () => {
         exact
         path="/locations"
         render={props => {
-          if(isAuthenticated()){
-            return <LocationList {...props}/>;
-          } else {
-            return <Redirect to="/Login"/>;
-          }
+            return <LocationList hasUser={hasUser} {...props}/>;
         }}
       />
       <Route
         exact
         path="/employees"
         render={props => {
-          if(isAuthenticated()) {
+          if(hasUser) {
             return <EmployeeList {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -72,7 +72,7 @@ const ApplicationViews = () => {
         exact
         path="/owners"
         render={props => {
-          if(isAuthenticated()) {
+          if(hasUser) {
             return <OwnerList {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -83,7 +83,7 @@ const ApplicationViews = () => {
         exact
         path="/animals/:animalId(\d+)"
         render={props => {
-          if(isAuthenticated()){
+          if(hasUser){
             return (
               <AnimalDetail
                 animalId={parseInt(props.match.params.animalId)} {...props} />);
@@ -96,7 +96,7 @@ const ApplicationViews = () => {
         exact
         path="/locations/:locationId(\d+)" render={
         (props) => {
-          if(isAuthenticated()){
+          if(hasUser){
             return (
               <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props}/>);
           } else {
@@ -106,7 +106,7 @@ const ApplicationViews = () => {
       />
       <Route
         path="/animals/new" render={(props) => {
-          if(isAuthenticated()){
+          if(hasUser){
             return <AnimalForm {...props}/>
           } else {
             return <Redirect to="/Login"/>;
@@ -115,7 +115,7 @@ const ApplicationViews = () => {
       />
       <Route
         path="/employees/new" render={(props) => {
-          if(isAuthenticated()){
+          if(hasUser){
             return <EmployeeForm {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -125,7 +125,7 @@ const ApplicationViews = () => {
       <Route
         path="/locations/new" render={
         (props) => {
-          if(isAuthenticated()){
+          if(hasUser){
             return <LocationForm {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -135,7 +135,7 @@ const ApplicationViews = () => {
       <Route
         path="/owners/new" render={
         (props) => {
-          if(isAuthenticated()){
+          if(hasUser){
             return <OwnerForm {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -143,7 +143,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route path="/animals/:animalId(\d+)/edit" render={props => {
-        if(isAuthenticated()) {
+        if(hasUser) {
           return <AnimalEditForm {...props}/>;
         } else {
           return <Redirect to="/Login"/>;
@@ -152,7 +152,7 @@ const ApplicationViews = () => {
       />
       <Route path="/employees/:employeeId(\d+)/edit" render={
         props => {
-          if(isAuthenticated()) {
+          if(hasUser) {
             return <EmployeeEditForm {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -161,7 +161,7 @@ const ApplicationViews = () => {
       />
       <Route path="/locations/:locationId(\d+)/edit" render={
         props => {
-          if(isAuthenticated()) {
+          if(hasUser) {
             return <LocationEditForm {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
@@ -170,15 +170,19 @@ const ApplicationViews = () => {
       />
       <Route path="/owners/:ownerId(\d+)/edit" render={
         props => {
-          if(isAuthenticated()) {
+          if(hasUser) {
             return <OwnerEditForm {...props}/>;
           } else {
             return <Redirect to="/Login"/>;
           }
         }}
       />
-      {/* <Route component={NotFound}/>
-      </Switch> */}
+      <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+        return <EmployeeWithAnimals {...props} />
+      }}
+      />
+      <Route component={NotFound}/>
+      </Switch>
     </>
   );
 };

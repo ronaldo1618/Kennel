@@ -4,27 +4,28 @@ import EmployeeManager from '../../modules/EmployeeManager'
 import "./AnimalForm.css"
 
 const AnimalEditForm = props => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [employees, setEmployees] = useState([]);
 
   const getEmployees = () => {
     EmployeeManager.getAll()
-    .then(employees => setEmployees(employees))
-  }
+    .then(employees => setEmployees(employees));
+  };
 
   useEffect(() => {
     getEmployees()
-  }, [])
+  }, []);
 
-  const handleFieldChange = evt => {
+
+  const handleFieldChange = e => {
     const stateToChange = { ...animal };
-    stateToChange[evt.target.id] = evt.target.value;
+    stateToChange[e.target.id] = e.target.value;
     setAnimal(stateToChange);
   };
 
-  const updateExistingAnimal = evt => {
-    evt.preventDefault()
+  const updateExistingAnimal = e => {
+    e.preventDefault()
     setIsLoading(true);
     const editedAnimal = {
       id: props.match.params.animalId,
@@ -32,7 +33,6 @@ const AnimalEditForm = props => {
       breed: animal.breed,
       employeeId: parseInt(animal.employeeId)
     };
-
     AnimalManager.update(editedAnimal)
       .then(() => props.history.push("/animals"))
   }
