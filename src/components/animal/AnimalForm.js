@@ -19,7 +19,6 @@ const AnimalForm = props => {
 
   const handleFieldChange = e => {
     const stateToChange = { ...animal };
-    console.log("id", e.target.id, "value", e.target.value)
     stateToChange[e.target.id] = e.target.value;
     setAnimal(stateToChange);
   }
