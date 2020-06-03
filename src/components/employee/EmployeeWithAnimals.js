@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import EmployeeManager from '../../modules/EmployeeManager'
+import apiManager from '../../modules/apiManager';
 import AnimalCard from '../animal/AnimalCard'
-import AnimalManager from '../../modules/AnimalManager';
 
 const EmployeeWithAnimals = props => {
   const [employee, setEmployee] = useState({});
@@ -10,13 +9,13 @@ const EmployeeWithAnimals = props => {
 
   const handleDelete = (id) => {
     setIsLoading(true);
-    AnimalManager.delete(id).then(() =>
+    apiManager.delete("animals", id).then(() =>
       props.history.push(`/animals`)
     );
   };
 
   useEffect(() => {
-    EmployeeManager.getWithAnimals(props.match.params.employeeId)
+    apiManager.getWithAnimals(props.match.params.employeeId)
       .then(APIResult => {
         setEmployee(APIResult);
         setAnimals(APIResult.animals);

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import AnimalSpotlight from '../animal/AnimalSpotlight';
-import AnimalManager from '../../modules/AnimalManager';
+import apiManager from '../../modules/apiManager';
 import './Home.css';
 
 const Home = () => {
   const [spotlightId, setSpotlightId] = useState(0);
 
   const refreshSpotlightAnimal = () => {
-    AnimalManager.getRandomId().then(setSpotlightId);
+    apiManager.getRandomId("animals").then(setSpotlightId);
   };
 
   useEffect(() => {

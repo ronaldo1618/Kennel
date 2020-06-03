@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AnimalManager from '../../modules/AnimalManager';
-import EmployeeManager from '../../modules/EmployeeManager';
+import apiManager from '../../modules/apiManager';
 import './AnimalForm.css';
 
 const AnimalForm = props => {
@@ -9,7 +8,7 @@ const AnimalForm = props => {
   const [employees, setEmployees] = useState([]);
 
   const getEmployees = () => {
-    EmployeeManager.getAll()
+    apiManager.getAll("employees")
     .then(employees => setEmployees(employees));
   };
 
@@ -30,7 +29,7 @@ const AnimalForm = props => {
     } else {
       setIsLoading(true);
       animal.employeeId = parseInt(animal.employeeId)
-      AnimalManager.post(animal)
+      apiManager.post("animals", animal)
         .then(() => props.history.push('/animals'));
     }
   };

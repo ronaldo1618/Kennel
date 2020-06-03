@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OwnerManager from '../../modules/OwnerManager';
+import apiManager from '../../modules/apiManager';
 import './OwnerForm.css';
 
 const OwnerForm = props => {
@@ -18,7 +18,7 @@ const OwnerForm = props => {
       window.alert("Please make sure all fields are filled out")
     } else {
       setIsLoading(true);
-      OwnerManager.post(owner)
+      apiManager.post("owners", owner)
         .then(() => props.history.push('/owners'));
     }
   };

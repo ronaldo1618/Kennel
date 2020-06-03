@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import EmployeeManager from '../../modules/EmployeeManager';
+import apiManager from '../../modules/apiManager';
 import './EmployeeForm.css';
 
 const EmployeeEditForm = props => {
@@ -22,12 +22,12 @@ const EmployeeEditForm = props => {
       job: employee.job
     };
 
-    EmployeeManager.update(editedEmployee)
+    apiManager.update("employees", editedEmployee)
       .then(() => props.history.push('/employees'))
   }
 
   useEffect(() => {
-    EmployeeManager.get(props.match.params.employeeId)
+    apiManager.get("employees", props.match.params.employeeId)
       .then(employee => {
         setEmployee(employee);
         setIsLoading(false);

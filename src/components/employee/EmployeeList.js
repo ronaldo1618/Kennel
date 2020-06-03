@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import EmployeeCard from './EmployeeCard';
-import EmployeeManager from '../../modules/EmployeeManager';
+import apiManager from '../../modules/apiManager';
 
 const EmployeeList = (props) => {
   const [employees, setEmployees] = useState([]);
 
   const getEmployees = () => {
-    EmployeeManager.getAll()
+    apiManager.getAll("employees")
     .then(employees => setEmployees(employees));
   };
 
@@ -15,8 +15,8 @@ const EmployeeList = (props) => {
   }, []);
 
   const deleteEmployee = id => {
-    EmployeeManager.delete(id)
-    .then(() => EmployeeManager.getAll().then(setEmployees));
+    apiManager.delete("employees", id)
+    .then(() => apiManager.getAll("employees").then(setEmployees));
   };
 
   return (

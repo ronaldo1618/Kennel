@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import EmployeeManager from '../../modules/EmployeeManager';
-import AnimalManager from "../../modules/AnimalManager";
+import apiManager from '../../modules/apiManager';
 import "./AnimalDetail.css";
 
 const AnimalDetail = (props) => {
@@ -9,13 +8,13 @@ const AnimalDetail = (props) => {
   const [employees, setEmployees] = useState({});
 
   useEffect(() => {
-    AnimalManager.get(props.animalId)
+    apiManager.get("animals", props.animalId)
     .then(animal => {
       setAnimal({
         name: animal.name,
         breed: animal.breed,
       });
-      return EmployeeManager.get(animal.employeeId)
+      return apiManager.get("employees", animal.employeeId)
     })
     .then(employee => {
       setEmployees({name: employee.name})
@@ -25,7 +24,7 @@ const AnimalDetail = (props) => {
 
   const handleDelete = () => {
     setIsLoading(true);
-    AnimalManager.delete(props.animalId).then(() =>
+    apiManager.delete("animals", props.animalId).then(() =>
       props.history.push(`/animals`)
     );
   };

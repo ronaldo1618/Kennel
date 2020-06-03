@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LocationManager from '../../modules/LocationManager';
+import apiManager from '../../modules/apiManager';
 import './LocationForm.css';
 
 const LocationForm = props => {
@@ -18,7 +18,7 @@ const LocationForm = props => {
       window.alert("Please make sure all fields are filled out")
     } else {
       setIsLoading(true);
-      LocationManager.post(location)
+      apiManager.post("locations", location)
         .then(() => props.history.push('/locations'));
     }
   };

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import AnimalCard from './AnimalCard';
-import AnimalManager from '../../modules/AnimalManager';
+import apiManager from '../../modules/apiManager';
 
 const AnimalList = (props) => {
   const [animals, setAnimals] = useState([]);
 
   const getAnimals = () => {
-    return AnimalManager.getAll().then(animalsFromAPI => {
+    return apiManager.getAll("animals").then(animalsFromAPI => {
       setAnimals(animalsFromAPI);
     });
   };
@@ -16,8 +16,8 @@ const AnimalList = (props) => {
   }, []);
 
   const deleteAnimal = id => {
-    AnimalManager.delete(id)
-    .then(() => AnimalManager.getAll().then(setAnimals));
+    apiManager.delete("animals", id)
+    .then(() => apiManager.getAll("animals").then(setAnimals));
   };
 
   return (

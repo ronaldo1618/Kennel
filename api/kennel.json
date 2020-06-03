@@ -4,7 +4,7 @@
       "id": 4,
       "name": "Yara",
       "breed": "Golden Retriever",
-      "employeeId": 1
+      "employeeId": 2
     },
     {
       "name": "Plugger",
@@ -40,9 +40,8 @@
     },
     {
       "id": 4,
-      "name": "Tim",
-      "job": "Customer Service Representative",
-      "locationId": 2
+      "name": "Tim the tool man",
+      "job": "Customer Service Representative"
     }
   ],
   "locations": [

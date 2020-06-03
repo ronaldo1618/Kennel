@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import OwnerManager from "../../modules/OwnerManager"
+import apiManager from '../../modules/apiManager';
 import "./OwnerForm.css"
 
 const OwnerEditForm = (props) => {
@@ -15,19 +15,18 @@ const OwnerEditForm = (props) => {
   const updateExistingOwner = evt => {
     evt.preventDefault()
     setIsLoading(true);
-    // This is an edit, so we need the id
     const editedOwner = {
       id: props.match.params.ownerId,
       name: owner.name,
       phoneNumber: owner.phoneNumber
     };
 
-    OwnerManager.update(editedOwner)
+    apiManager.update("owners", editedOwner)
       .then(() => props.history.push("/owners"))
   }
 
   useEffect(() => {
-    OwnerManager.get(props.match.params.ownerId)
+    apiManager.get("owners", props.match.params.ownerId)
       .then(owner => {
         setOwner(owner);
         setIsLoading(false);
